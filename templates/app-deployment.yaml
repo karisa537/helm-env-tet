@@ -19,23 +19,16 @@ spec:
           ports:
             - containerPort: {{ .Values.springboot.image.port }}
           env:
-          # - name: DB_HOST
-          #   value: mysql
-          # - name: DB_NAME
-          #   value: karisaTestDB
-          # envFrom:
-          # - configMapRef: 
-          #     name: customer-configMap
           - name: DB_USERNAME  # Setting Database username from Secret
             valueFrom:
               secretKeyRef:
-                name: db-credentials # Secret Name
-                key: username
+                key: db.username
+                name: {{ .Release.Name }}-auth
           - name: DB_PASSWORD # Setting Database password from Secret
             valueFrom:
               secretKeyRef:
-                name: db-credentials
-                key: password          
+                key: db.password
+                name: {{ .Release.Name }}-auth       
           - name: "USERNAME"
             valueFrom:
               secretKeyRef:

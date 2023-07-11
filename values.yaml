@@ -17,14 +17,8 @@ springboot:
 secrets: 
   password: "password"
   username: root
-  # T24_USERNAME: "INPUTT"
-  # T24_PASSWORD: "123456"
-  # AMQP_USERNAME: "admin"
-  # AMQP_PASSWORD: "admin"
-  # DATABASE_USERNAME: "loyaltyinhouse"
-  # DATABASE_PASSWORD: "LOyalty!!321Test"
-  # API_USERNAME: "admin"
-  # API_PASSWORD: "admin"
+  db.username: dGVzdHVzZXI=
+  db.password: dGVzdHVzZXJAMTIz
 #CONFIGMAPS  
 configs:
   DB_HOST: "mysql"
